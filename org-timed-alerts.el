@@ -423,7 +423,7 @@ MESSAGE is the alert body. Optional keys are those accepted by `alert'."
 				 :from ,(ts-format "%Y-%m-%d" (ts-now))
 				 :to ,(ts-format "%Y-%m-%d"
 						 (ts-adjust 'day 1 (ts-now)))))
-			    (not (todo ,@org-timed-alerts-todo-exclusions)))
+			    (not (@org-timed-alerts-todo-exclusions)))
 			  :action #'org-timed-alerts--org-ql-action)
 	   do (org-timed-alerts--parser entry))
   (message "Org-timed-alerts: timers updated."))
